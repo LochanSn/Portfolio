@@ -2,160 +2,169 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lochan SN | Portfolio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Lochan S N | Interactive Portfolio</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap">
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background-color: #f4f4f9;
-      color: #333;
-    }
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 30px 0;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
-    }
-    header p {
-      margin-top: 5px;
-      font-size: 1.1em;
-    }
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 20px 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #444;
-      border-bottom: 2px solid #0078d7;
-      padding-bottom: 8px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li {
-      margin: 5px 0;
-    }
-    .contact a {
-      color: #0078d7;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #333;
-      color: #fff;
+    body {font-family:'Poppins',sans-serif;margin:0;background:#f7f9fa;color:#222;}
+    header {background:#27293d;color:#fff;padding:2em 0 1em;text-align:center;position:relative;}
+    nav {background:#333;padding:12px 0;position:sticky;top:0;z-index:100;}
+    nav ul {margin:0;padding:0;list-style:none;display:flex;justify-content:center;gap:2em;}
+    nav li {display:inline;}
+    nav a {color:#fff;text-decoration:none;font-weight:600;transition:.2s;}
+    nav a:hover {color:#00aedb;}
+    .container {max-width:1000px;margin:2em auto;padding:2em;background:#fff;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,0.08);}
+    h2 {color:#222;border-bottom:2px solid #00aedb;display:inline-block;padding-bottom:6px;margin-top:1.5em;}
+    .project-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:2em;margin-top:1.5em;}
+    .project-card {background:#f4faff;border-radius:10px;box-shadow:0 2px 8px #e4e9ee85;overflow:hidden;cursor:pointer;transition:.3s;}
+    .project-card:hover {transform:scale(1.03);box-shadow:0 8px 32px #e4e9ee;}
+    .project-card img {width:100%;height:180px;object-fit:cover;}
+    .project-card-content {padding:1em;}
+    .project-card h3 {margin:0 0 6px;}
+    .project-card p {margin:0;color:#574f7d;}
+    .skills {display:flex;flex-wrap:wrap;gap:2em;margin-top:1.2em;}
+    .skill {flex:1;min-width:200px;}
+    .skill-bar-outer {background:#eee;border-radius:8px;overflow:hidden;}
+    .skill-bar-inner {height:16px;width:0;background:#00aedb;border-radius:8px;text-align:right;transition:width 1s;}
+    .scroll-up {position:fixed;bottom:50px;right:45px;background:#00aedb;color:#fff;padding:0.7em 1.3em;border-radius:40px;display:none;font-size:1.3em;z-index:200;cursor:pointer;border:none;box-shadow:0 8px 32px #00aedbbb;}
+    @media (max-width:600px) {
+      .container {padding:1em;}
+      nav ul {gap:1em;}
+      header h1{font-size:1.6em;}
     }
   </style>
 </head>
-
 <body>
   <header>
     <h1>Lochan S N</h1>
-    <p>Web Developer | Machine Learning Enthusiast</p>
-    <p class="contact">📧 <a href="mailto:snlochan63@gmail.com">snlochan63@gmail.com</a> | 📱 +91-9110249503 |
-      <a href="https://www.linkedin.com/in/lochan-sn-074a5a227" target="_blank">LinkedIn</a>
-    </p>
+    <div>
+      Web Developer | Machine Learning Enthusiast
+      <br>
+      <a style="color:#00aedb;" href="mailto:snlochan63@gmail.com">snlochan63@gmail.com</a> | +91-9110249503
+      <br>
+      <a style="color:#00aedb;" href="https://www.linkedin.com/in/lochan-sn-074a5a227" target="_blank">LinkedIn</a>
+    </div>
   </header>
-
-  <section>
-    <h2>Professional Summary</h2>
-    <p>
-      I have built projects and gained hands-on experience in web development and machine learning. Skilled in HTML, CSS, JavaScript,
-      Python, SQL, and Git, with a strong ability to solve problems and ensure quality in development. Eager to apply skills in a tech environment.
-    </p>
-  </section>
-
-  <section>
-    <h2>Education</h2>
+  <nav>
     <ul>
-      <li><b>B.E. in Information Science and Engineering</b>, MVJ College of Engineering, Bangalore (2021–2025) — CGPA: 7.23</li>
-      <li><b>Intermediate / PU</b>, Valley View PU College, Bangalore (2019–2021) — 78.8%</li>
-      <li><b>Secondary School (CBSE)</b>, Narayana Olympiad School, Bangalore (2007–2019) — 72%</li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-  </section>
+  </nav>
 
-  <section>
-    <h2>Training</h2>
-    <p><b>Dhee Coding Lab – Java Full Stack Developer Training (Pursuing)</b></p>
-    <ul>
-      <li>Front-end: HTML, CSS, JavaScript</li>
-      <li>Back-end: Java, Database Design (Oracle SQL)</li>
-    </ul>
-  </section>
+  <div class="container" id="about">
+    <h2>About</h2>
+    <p>I have built projects and gained hands-on experience in web development and machine learning. Skilled in HTML, CSS, JavaScript, Python, SQL, and Git, with a strong ability to solve problems and ensure quality in development. Eager to apply skills in a tech environment.</p>
+  </div>
 
-  <section>
-    <h2>Internships</h2>
-    <ul>
-      <li><b>Dotch Endeavors Pvt Ltd</b> – Web Development Intern (May 2025–Present)
-        <ul>
-          <li>Developed and deployed full-stack web applications using HTML, CSS, JavaScript, and Python.</li>
-          <li>Improved data management and version control using SQL and Git.</li>
-        </ul>
-      </li>
-      <li><b>Cognifyz Technologies</b> – Machine Learning Intern (March 2025–April 2025)
-        <ul>
-          <li>Built ML models and applied NLP techniques on real-world datasets.</li>
-          <li>Enhanced accuracy and integrated sentiment classifiers with databases.</li>
-        </ul>
-      </li>
-    </ul>
-  </section>
-
-  <section>
+  <div class="container" id="projects">
     <h2>Projects</h2>
-    <ul>
-      <li><b>E-Doctor Appointment</b> – HTML, CSS, JavaScript, Python, MySQL
-        <ul>
-          <li>Led front-end development ensuring smooth navigation.</li>
-          <li>Connected Python backend to MySQL for data storage.</li>
-        </ul>
-      </li>
-      <li><b>Twitter Sentiment Analysis Using NLP</b> – Python, SQL
-        <ul>
-          <li>Built sentiment classifier (87% accuracy on 10k+ tweets).</li>
-          <li>Designed scalable tweet ingestion and SQL-backed storage.</li>
-        </ul>
-      </li>
-      <li><b>Fire & Smoke Detection</b> – Python, OpenCV, Streamlit, Twilio
-        <ul>
-          <li>Developed CNN-based detection system with 90%+ accuracy.</li>
-          <li>Integrated real-time SMS alerts and live GPS tracking.</li>
-        </ul>
-      </li>
-    </ul>
-  </section>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="https://source.unsplash.com/600x400/?doctor,app" alt="E-Doctor Appointment">
+        <div class="project-card-content">
+          <h3>E-Doctor Appointment</h3>
+          <p>Led front-end development ensuring smooth navigation and user interaction. Connected a Python backend to MySQL for seamless data handling.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/600x400/?twitter,ai" alt="Twitter Sentiment Analysis">
+        <div class="project-card-content">
+          <h3>Twitter Sentiment Analysis Using NLP</h3>
+          <p>Built a sentiment classifier achieving 87% accuracy on 10k+ tweets with scalable SQL-backed storage.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/600x400/?fire,ai" alt="Fire & Smoke Detection">
+        <div class="project-card-content">
+          <h3>Fire & Smoke Detection</h3>
+          <p>Designed real-time detection system with CNN models (90%+ accuracy), integrated SMS alerts and live GPS tracking via Twilio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <section>
+  <div class="container" id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>Programming Languages: Java, Python</li>
-      <li>Web Development: HTML5, CSS, JavaScript</li>
-      <li>Databases: MySQL, Oracle SQL</li>
-      <li>Tools: VS Code, GitHub, Eclipse</li>
-    </ul>
-  </section>
+    <div class="skills">
+      <div class="skill">
+        <strong>Java</strong>
+        <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="85%"></div></div>
+      </div>
+      <div class="skill">
+        <strong>Python</strong>
+        <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="90%"></div></div>
+      </div>
+      <div class="skill">
+        <strong>HTML5/CSS/JavaScript</strong>
+        <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="95%"></div></div>
+      </div>
+      <div class="skill">
+        <strong>SQL (MySQL/Oracle)</strong>
+        <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="75%"></div></div>
+      </div>
+      <div class="skill">
+        <strong>Git/GitHub</strong>
+        <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="85%"></div></div>
+      </div>
+    </div>
+  </div>
 
-  <section>
-    <h2>Certifications</h2>
+  <div class="container" id="education">
+    <h2>Education & Training</h2>
+    <ul>
+      <li><b>B.E. Information Science</b>, MVJ College of Engineering, Bangalore – CGPA: 7.23 (2021–2025)</li>
+      <li><b>Intermediate / PU</b>, Valley View PU College, Bangalore – 78.8% (2019–2021)</li>
+      <li><b>Secondary (CBSE)</b>, Narayana Olympiad School, Bangalore – 72% (2007–2019)</li>
+      <li><b>Java Full Stack Developer Training</b>, Dhee Coding Lab (Pursuing)</li>
+    </ul>
+    <h3>Certifications</h3>
     <ul>
       <li>Full Stack Web Development – Intern Leap</li>
       <li>Machine Learning – Cod Soft</li>
-      <li>MySQL Training Completion – IIT Bombay Spoken Tutorial</li>
+      <li>MySQL Training – IIT Bombay Spoken Tutorial</li>
     </ul>
-  </section>
+  </div>
 
-  <footer>
-    <p>© 2025 Lochan S N | Built with HTML, CSS, and passion 💻</p>
+  <div class="container" id="contact">
+    <h2>Contact</h2>
+    <p>Feel free to reach out for opportunities or collaboration!</p>
+    <ul>
+      <li>Email: <a href="mailto:snlochan63@gmail.com">snlochan63@gmail.com</a></li>
+      <li>Phone: +91-9110249503</li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/lochan-sn-074a5a227" target="_blank">lochan-sn-074a5a227</a></li>
+    </ul>
+  </div>
+
+  <button class="scroll-up" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679; Top</button>
+  <footer style="text-align:center;padding:1em 0;color:#fff;background:#27293d;margin-top:2em;border-top:3px solid #00aedb;">
+    © 2025 Lochan S N
   </footer>
+  <script>
+    // Sticky scroll-to-top button and animated skill bars
+    window.addEventListener('scroll', function() {
+      document.querySelector('.scroll-up').style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    // Animate skill bars on scroll
+    const skillBars = document.querySelectorAll('.skill-bar-inner');
+    let skillsAnimated = false;
+    function animateSkills() {
+      if(!skillsAnimated && window.scrollY + window.innerHeight > document.getElementById('skills').offsetTop+50) {
+        skillsAnimated = true;
+        skillBars.forEach(bar => { bar.style.width = bar.getAttribute('data-width'); });
+      }
+    }
+    window.addEventListener('scroll', animateSkills);
+    // Smooth scroll for navigation
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+      });
+    });
+  </script>
 </body>
 </html>
