@@ -1,22 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Smooth scroll for navigation links
+  // Smooth scroll for nav links
   document.querySelectorAll('nav a.nav-link').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', e => {
       e.preventDefault();
-      const targetID = this.getAttribute('href').substring(1);
-      document.getElementById(targetID).scrollIntoView({ behavior: 'smooth' });
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if(target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     });
   });
 
-  // Simple form validation
-  const form = document.querySelector('form');
-  form.addEventListener('submit', (e) => {
-    const email = form.querySelector('input[type="email"]').value;
-    const name = form.querySelector('input[type="text"]').value;
-    const message = form.querySelector('textarea').value;
-    if (!email || !name || !message) {
-      e.preventDefault();
-      alert('Please fill out all fields before submitting.');
+  // Bootstrap form validation
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (form.checkValidity()) {
+      showAlert('Message sent successfully!', 'success');
+      form.reset();
+    } else {
+      e.stopPropagation();
+      form.classList.add('was-validated');
+      showAlert('Please fill out all fields correctly.', 'danger');
     }
   });
+
+  function showAlert(message, type) {
+    const alertBox = document.getElementById('formAlert');
+    alertBox.innerHTML = `<div class="alert alert-${type}" role="alert">${message}</div>`;
+    setTimeout(() => { alertBox.innerHTML = ''; }, 4000);
+  }
 });
