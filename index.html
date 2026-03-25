@@ -1,265 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lochan SN | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="bg-layers">
-      <div class="bg-grid"></div>
-      <div class="bg-gradient"></div>
-      <div class="bg-orb orb-1"></div>
-      <div class="bg-orb orb-2"></div>
-    </div>
-    <div class="page-wrap">
-      <header class="hero" id="top">
-        <div class="scanline"></div>
-        <div class="glow-ring"></div>
-        <div class="corner corner-1"></div>
-        <div class="corner corner-2"></div>
-        <div class="corner corner-3"></div>
-        <div class="corner corner-4"></div>
-        <div class="badge">Java Full Stack Developer</div>
-        <h1>Lochan SN</h1>
-        <p class="subtitle">
-          Building reliable, scalable web applications with Java, Spring Boot, SQL, and modern frontend craft.
-        </p>
-        <div class="cta-row">
-          <a class="btn primary" href="#work">View Work</a>
-          <a class="btn ghost" href="Lochan_SN_CV.pdf" download>Download Résumé</a>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lochan SN | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #264673;
+      --accent: #4eb8ff;
+      --light-bg: #f8fafc;
+      --text-dark: #1a1f29;
+      --text-light: #555;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --bg-gradient: linear-gradient(135deg, #1e1f29, #1b2735);
+      --accent: #4ef0ff;
+      --glass: rgba(255, 255, 255, 0.08);
+      --text: #f4f7fa;
+      --subtext: #aeb8c6;
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(120deg, var(--primary), #1d3557);
+      color: #fff;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4em 1em 5em;
+      background: radial-gradient(circle at 50% 40%, rgba(78, 240, 255, 0.15), transparent 60%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: var(--light-bg);
+      clip-path: ellipse(70% 100% at 50% 100%);
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      font-size: 3.2em;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      letter-spacing: 1px;
+      color: var(--accent);
+    }
+
+    header p {
+      font-size: 1.1em;
+      opacity: 0.9;
+      margin-top: 0.5em;
+      color: var(--subtext);
+      max-width: 600px;
+      margin: 0.5em auto;
+    }
+
+    nav {
+      background: #fff;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      background: rgba(20, 25, 35, 0.8);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      gap: 2.5em;
+      padding: 1em 0;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--primary);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      max-width: 950px;
+      max-width: 1000px;
+      margin: 4em auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2.5em 2em;
+      padding: 2.5em;
+      background: var(--glass);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-3px);
+      backdrop-filter: blur(16px);
+    }
+
+    h2 {
+      color: var(--primary);
+      text-align: center;
+      color: var(--accent);
+      font-size: 1.8em;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 5px;
+      margin: 0 auto 1.5em;
+      margin-bottom: 0.8em;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* About */
+    /* About Section */
+    #about p {
+      text-align: center;
+      color: var(--text-light);
+      color: var(--subtext);
+      font-size: 1.05em;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Projects */
+    /* Project Cards */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2em;
+      margin-top: 2em;
+    }
+
+    .card {
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: #fff;
+      transition: transform 0.4s, box-shadow 0.4s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transform: translateY(-10px);
+      box-shadow: 0 12px 32px rgba(78, 240, 255, 0.25);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .card-content {
+      padding: 1em 1.2em;
+    }
+
+    .card-content h3 {
+      color: var(--primary);
+      color: var(--accent);
+      margin-bottom: 0.5em;
+      font-size: 1.1em;
+    }
+
+    .card-content p {
+      color: var(--text-light);
+      color: var(--subtext);
+      font-size: 0.95em;
+    }
+
+@@ -190,42 +159,63 @@
+    }
+
+    .skill {
+      flex: 1 1 200px;
+      text-align: center;
+      position: relative;
+    }
+
+    .bar-bg {
+      background: #e6ecf3;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 12px;
+      margin-top: 0.5em;
+    .skill svg {
+      transform: rotate(-90deg);
+      width: 110px;
+      height: 110px;
+    }
+
+    .skill circle {
+      fill: none;
+      stroke-width: 10;
+      stroke-linecap: round;
+    }
+
+    .bar {
+      height: 12px;
+      background: var(--accent);
+      width: 0;
+      transition: width 1.2s ease;
+    .bg {
+      stroke: rgba(255, 255, 255, 0.1);
+    }
+
+    .progress {
+      stroke: var(--accent);
+      stroke-dasharray: 315;
+      stroke-dashoffset: 315;
+      transition: stroke-dashoffset 1.2s ease-out;
+    }
+
+    .skill.active .progress {
+      stroke-dashoffset: calc(315 - (var(--percent) * 3.15));
+    }
+
+    .skill span {
+      position: absolute;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: 600;
+      font-size: 1em;
+      color: var(--accent);
+    }
+
+    .skill label {
+      display: block;
+      margin-top: 0.5em;
+      color: var(--subtext);
+    }
+
+    /* Education */
+    #education ul {
+      list-style: none;
+      color: var(--text-light);
+      margin-top: 1.5em;
+      color: var(--subtext);
+    }
+
+    #education li {
+      margin-bottom: 0.8em;
+    }
+
+    #education h3 {
+      color: var(--primary);
+      margin-top: 1.8em;
+      text-align: center;
+    }
+
+    /* Contact */
+    #contact a {
+      color: var(--accent);
+@@ -236,14 +226,14 @@
+    footer {
+      text-align: center;
+      padding: 1.5em 0;
+      background: var(--primary);
+      color: #fff;
+      color: var(--subtext);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 3em;
+    }
+
+    @media (max-width: 700px) {
+    @media (max-width: 600px) {
+      section {
+        padding: 1.8em 1.2em;
+        padding: 1.5em;
+      }
+      header h1 {
+        font-size: 2.2em;
+@@ -255,9 +245,9 @@
+<body>
+  <header>
+    <h1>Lochan S N</h1>
+    <p>Web Developer | Machine Learning Enthusiast | Java Full Stack Trainee</p>
+    <p><a href="mailto:snlochan63@gmail.com" style="color:#fff;">snlochan63@gmail.com</a> • 
+      <a href="https://www.linkedin.com/in/lochan-sn-074a5a227" target="_blank" style="color:#4eb8ff;">LinkedIn</a>
+    <p>Web Developer • Machine Learning Enthusiast • Problem Solver</p>
+    <p><a href="mailto:snlochan63@gmail.com" style="color:#4ef0ff;">snlochan63@gmail.com</a> | 
+      <a href="https://www.linkedin.com/in/lochan-sn-074a5a227" target="_blank" style="color:#4ef0ff;">LinkedIn</a>
+    </p>
+  </header>
+
+@@ -273,7 +263,8 @@ <h1>Lochan S N</h1>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>Results-oriented developer with hands-on experience in full stack web development, Java, and machine learning. I love building elegant, efficient, and impactful solutions — blending design precision with solid technical foundations.</p>
+    <p>Results-driven developer passionate about crafting seamless digital experiences. I combine full-stack
+      development, machine learning, and design thinking to bring meaningful ideas to life.</p>
+  </section>
+
+  <section id="projects">
+@@ -283,21 +274,21 @@ <h2>Projects</h2>
+        <img src="https://source.unsplash.com/600x400/?doctor,web" alt="">
+        <div class="card-content">
+          <h3>E-Doctor Appointment</h3>
+          <p>Built a web platform integrating Python backend with MySQL database for smooth doctor-patient appointments.</p>
+          <p>Designed a responsive frontend and integrated Python backend for patient–doctor scheduling and MySQL data management.</p>
         </div>
-        <div class="contact-chip">
-          <span>snlochan63@gmail.com</span>
-          <span>+91 9110249503</span>
-          <a href="https://www.linkedin.com/in/lochan-sn-074a5a227" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/600x400/?movie,java" alt="">
+        <div class="card-content">
+          <h3>Movie Database Management</h3>
+          <p>Developed a Java-based console app using Hibernate for movie CRUD operations and relational database handling.</p>
+          <p>Developed a CRUD-based Java app using Hibernate for efficient movie data handling and database interaction.</p>
         </div>
-      </header>
-
-      <main>
-        <section class="panel" id="summary" data-animate>
-          <div class="panel-head">
-            <p class="eyebrow">Profile</p>
-            <h2>Professional Summary</h2>
-          </div>
-          <p class="lead">
-            Results-driven Java Full Stack Developer with hands-on experience building scalable web applications using Java, Spring Boot, SQL, and REST APIs. Strong foundation in data structures, OOP, and debugging, with a focus on delivering efficient, high-quality software aligned with industry standards.
-          </p>
-        </section>
-
-        <section class="panel" id="skills" data-animate>
-          <div class="panel-head">
-            <p class="eyebrow">Toolkit</p>
-            <h2>Technical Skills</h2>
-          </div>
-          <div class="pill-grid">
-            <div>
-              <p class="label">Languages</p>
-              <div class="pill-row">
-                <span>Java</span><span>Python</span><span>SQL</span><span>JavaScript</span>
-              </div>
-            </div>
-            <div>
-              <p class="label">Frontend</p
-              <div class="pill-row">
-                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React js</span><span>Bootstrap</span>
-              </div>
-            </div>
-            <div>
-              <p class="label">Backend</p>
-              <div class="pill-row">
-                <span>Spring Boot</span><span>JDBC</span><span>Servlets</span><span>Hibernate</span>
-              </div>
-            </div>
-            <div>
-              <p class="label">Databases</p>
-              <div class="pill-row">
-                <span>MySQL</span><span>Oracle SQL</span>
-              </div>
-            </div>
-            <div>
-              <p class="label">Concepts</p>
-              <div class="pill-row">
-                <span>Data Structures</span><span>OOP</span><span>DBMS</span><span>REST APIs</span><span>MVC Architecture</span>
-              </div>
-            </div>
-            <div>
-              <p class="label">Tools</p>
-              <div class="pill-row">
-                <span>Git</span><span>GitHub</span><span>VS Code</span><span>Eclipse</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel" id="work" data-animate>
-          <div class="panel-head">
-            <p class="eyebrow">Experience</p>
-            <h2>Internships</h2>
-          </div>
-          <div class="timeline">
-            <article class="card">
-              <div class="card-top">
-                <div>
-                  <h3>Java Full Stack Developer Intern</h3>
-                  <p class="org">Dhee Coding Lab</p>
-                </div>
-                <span class="tag">May 2025 – Nov 2025</span>
-              </div>
-              <ul>
-                <li>Developed and deployed full-stack applications with Java, Servlets, Hibernate, and SQL.</li>
-                <li>Designed and optimized relational schemas to improve query performance.</li>
-                <li>Built REST-style APIs following MVC patterns for scalable backend systems.</li>
-                <li>Debugged and resolved application issues, lifting system reliability.</li>
-              </ul>
-            </article>
-            <article class="card">
-              <div class="card-top">
-                <div>
-                  <h3>Web Development Intern</h3>
-                  <p class="org">Dotch Endeavors Pvt Ltd</p>
-                </div>
-                <span class="tag">Oct 2023 – Nov 2023</span>
-              </div>
-              <ul>
-                <li>Built dynamic web modules using a Java backend and JavaScript frontend.</li>
-                <li>Implemented CRUD operations with efficient SQL ensuring data integrity.</li>
-                <li>Collaborated on testing, debugging, and performance improvements.</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <section class="panel" id="projects" data-animate>
-          <div class="panel-head">
-            <p class="eyebrow">Projects</p>
-            <h2>Selected Work</h2>
-          </div>
-          <div class="project-grid">
-            <article class="card">
-              <div class="tag">Spring Boot · MySQL</div>
-              <h3>E-Doctor Appointment System</h3>
-              <p>
-                Scalable backend services with layered architecture, RESTful APIs for scheduling and user management, and MySQL integration through Spring Data JPA and Hibernate.
-              </p>
-              <ul>
-                <li>Designed REST endpoints for appointment flows and user roles.</li>
-                <li>Improved response handling and executed end-to-end testing.</li>
-              </ul>
-            </article>
-            <article class="card">
-              <div class="tag">Python · OpenCV · CNN</div>
-              <h3>Fire and Smoke Detection System</h3>
-              <p>
-                Real-time detection pipeline using deep learning with Streamlit UI, achieving 90%+ accuracy and automated SMS alerts via Twilio with GPS context.
-              </p>
-              <ul>
-                <li>Optimized video processing for faster frame analysis.</li>
-                <li>Hooked SMS alerts to detection confidence and location.</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <section class="panel duo" id="education" data-animate>
-          <div>
-            <div class="panel-head">
-              <p class="eyebrow">Learning</p>
-              <h2>Education</h2>
-            </div>
-            <ul class="list">
-              <li>
-                <div>
-                  <strong>B.E. Information Science & Engineering</strong>
-                  <p>MVJ College of Engineering, Bangalore</p>
-                </div>
-                <span class="tag">2021 – 2025 · CGPA 7.23</span>
-              </li>
-              <li>
-                <div>
-                  <strong>Pre-University (PU)</strong>
-                  <p>Valley View PU College, Bangalore</p>
-                </div>
-                <span class="tag">2019 – 2021 · 78.33%</span>
-              </li>
-              <li>
-                <div>
-                  <strong>Secondary School (CBSE)</strong>
-                  <p>Narayana Olympiad School, Bangalore</p>
-                </div>
-                <span class="tag">2007 – 2019 · 72.4%</span>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <div class="panel-head">
-              <p class="eyebrow">Leadership & Credentials</p>
-              <h2>Beyond Class</h2>
-            </div>
-            <div class="stack">
-              <div class="card mini">
-                <h3>Leadership</h3>
-                <p>
-                  Event Coordinator for VETECX, a national-level technical fest—managed team coordination, tracked deliverables, and ensured smooth execution.
-                </p>
-              </div>
-              <div class="card mini">
-                <h3>Certifications</h3>
-                <ul class="tight">
-                  <li>Full Stack Web Development — Intern Leap</li>
-                  <li>MySQL Training Completion — IIT Bombay Spoken Tutorial</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel contact" id="contact" data-animate>
-          <div>
-            <p class="eyebrow">Let’s build</p>
-            <h2>Open to full-time and internship opportunities</h2>
-            <p class="lead">
-              Reach out for roles that value clean architecture, thoughtful APIs, and dependable delivery.
-            </p>
-            <div class="cta-row">
-              <a class="btn primary" href="mailto:snlochan63@gmail.com">Email Lochan</a>
-              <a class="btn ghost" href="tel:+919110249503">Call</a>
-            </div>
-          </div>
-          <div class="contact-block">
-            <p class="label">Get in touch</p>
-            <p>snlochan63@gmail.com</p>
-            <p>+91 9110249503</p>
-            <a href="https://www.linkedin.com/in/lochan-sn-074a5a227" target="_blank" rel="noreferrer">LinkedIn Profile</a>
-          </div>
-        </section>
-      </main>
-
-    <footer class="foot">
-      <p>Built with care by Lochan SN · <a href="#top">Back to top</a></p>
-    </footer>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/600x400/?fire,ai" alt="">
+        <div class="card-content">
+          <h3>Fire & Smoke Detection</h3>
+          <p>Real-time CNN model for fire and smoke detection with automated Twilio alert system for emergency response.</p>
+          <p>Implemented CNN model for real-time fire detection with Twilio alerts, optimized for live video streams.</p>
+        </div>
+      </div>
     </div>
-    <script>
-      const panels = document.querySelectorAll("[data-animate]");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) entry.target.classList.add("visible");
-          });
-        },
-        { threshold: 0.2 }
-      );
-      panels.forEach((p, i) => {
-        p.style.setProperty("--delay", `${i * 120}ms`);
-        observer.observe(p);
+@@ -306,70 +297,74 @@ <h3>Fire & Smoke Detection</h3>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">
+        <strong>HTML/CSS/JS</strong>
+        <div class="bar-bg"><div class="bar" data-width="95%"></div></div>
+      <div class="skill" style="--percent:95">
+        <svg>
+          <circle class="bg" cx="55" cy="55" r="50"></circle>
+          <circle class="progress" cx="55" cy="55" r="50"></circle>
+        </svg>
+        <span>95%</span>
+        <label>HTML/CSS/JS</label>
+      </div>
+      <div class="skill">
+        <strong>Python</strong>
+        <div class="bar-bg"><div class="bar" data-width="90%"></div></div>
+      <div class="skill" style="--percent:90">
+        <svg>
+          <circle class="bg" cx="55" cy="55" r="50"></circle>
+          <circle class="progress" cx="55" cy="55" r="50"></circle>
+        </svg>
+        <span>90%</span>
+        <label>Python</label>
+      </div>
+      <div class="skill">
+        <strong>Java (Full Stack)</strong>
+        <div class="bar-bg"><div class="bar" data-width="85%"></div></div>
+      <div class="skill" style="--percent:85">
+        <svg>
+          <circle class="bg" cx="55" cy="55" r="50"></circle>
+          <circle class="progress" cx="55" cy="55" r="50"></circle>
+        </svg>
+        <span>85%</span>
+        <label>Java</label>
+      </div>
+      <div class="skill">
+        <strong>SQL</strong>
+        <div class="bar-bg"><div class="bar" data-width="80%"></div></div>
+      </div>
+      <div class="skill">
+        <strong>Git/GitHub</strong>
+        <div class="bar-bg"><div class="bar" data-width="75%"></div></div>
+      <div class="skill" style="--percent:80">
+        <svg>
+          <circle class="bg" cx="55" cy="55" r="50"></circle>
+          <circle class="progress" cx="55" cy="55" r="50"></circle>
+        </svg>
+        <span>80%</span>
+        <label>SQL</label>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education & Training</h2>
+    <h2>Education</h2>
+    <ul>
+      <li><b>B.E. Information Science</b>, MVJ College of Engineering – CGPA: 7.23 (2021–2025)</li>
+      <li><b>Intermediate / PU</b>, Valley View PU College – 78.33% (2019–2021)</li>
+      <li><b>Secondary (CBSE)</b>, Narayana Olympiad School – 72.4% (2007–2019)</li>
+      <li><b>Java Full Stack Training</b> – Dhee Coding Lab (Pursuing)</li>
+    </ul>
+    <h3>Certifications</h3>
+    <ul>
+      <li>MySQL Training Completion – IIT Bombay Spoken Tutorial</li>
+      <li>Full Stack Web Development – Intern Leap</li>
+      <li>Machine Learning – Cod Soft</li>
+      <li><b>Java Full Stack Training</b> (Dhee Coding Lab, pursuing)</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul style="list-style:none;text-align:center;line-height:1.8;">
+      <li>Email: <a href="mailto:snlochan63@gmail.com">snlochan63@gmail.com</a></li>
+      <li>Phone: +91-9110249503</li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/lochan-sn-074a5a227" target="_blank">lochan-sn-074a5a227</a></li>
+    </ul>
+    <p>Email: <a href="mailto:snlochan63@gmail.com">snlochan63@gmail.com</a></p>
+    <p>Phone: +91-9110249503</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/lochan-sn-074a5a227" target="_blank">lochan-sn-074a5a227</a></p>
+  </section>
+
+  <footer>© 2025 Lochan S N</footer>
+
+  <script>
+    // Skill bar animation
+    const bars = document.querySelectorAll('.bar');
+    let animated = false;
+    function animateBars() {
+      const skillsTop = document.getElementById('skills').getBoundingClientRect().top;
+      if (!animated && skillsTop < window.innerHeight - 50) {
+        bars.forEach(bar => {
+          bar.style.width = bar.dataset.width;
+        });
+        animated = true;
+      }
+    }
+    window.addEventListener('scroll', animateBars);
+    // Activate skill rings on scroll
+    const skills = document.querySelectorAll('.skill');
+    function checkScroll() {
+      const triggerBottom = window.innerHeight * 0.8;
+      skills.forEach(skill => {
+        const top = skill.getBoundingClientRect().top;
+        if (top < triggerBottom) {
+          skill.classList.add('active');
+        }
       });
-    </script>
-  </body>
+    }
+    window.addEventListener('scroll', checkScroll);
+  </script>
+</body>
+
 </html>
